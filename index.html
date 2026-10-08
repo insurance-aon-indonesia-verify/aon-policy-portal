@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AON Insurance Indonesia - Official Policy Verification Portal</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23eb0017'/%3E%3Cpolygon fill='white' points='50 16.27, 13.9 83.3, 27.76, 83.3, 32.55, 71.8, 57.23, 71.8, 52.05, 59.98, 37.47, 59.98, 48.37, 33.82, 69 83.3, 82.85, 83.3'/%3E%3C/svg%3E">
+
+    <style>
+        :root {
+            --primary-color: #eb0017;
+            --dark-color: #1e272e;
+            --bg-color: #f5f6fa;
+            --border-color: #dcdde1;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .portal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border-top: 6px solid var(--primary-color);
+            text-align: center;
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        .logo-box { margin-bottom: 20px; }
+
+        .brand-title {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin: 0 0 25px 0;
+            text-transform: uppercase;
+        }
+
+        .portal-title {
+            font-size: 20px;
+            color: var(--dark-color);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+
+        .portal-desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 0 0 25px 0;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+
+        .search-group { margin-bottom: 20px; }
+
+        .search-input {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            outline: none;
+            box-sizing: border-box;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .search-input:focus { border-color: var(--primary-color); }
+
+        .verify-btn {
+            width: 100%;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        .verify-btn:hover { filter: brightness(0.94); }
+        .verify-btn:active { transform: translateY(1px); }
+
+        .form-message {
+            min-height: 20px;
+            margin: 12px 0 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .footer-note {
+            padding: 20px;
+            text-align: center;
+            font-size: 11px;
+            color: #95a5a6;
+            line-height: 1.6;
+        }
+
+        .footer-note a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="portal-card">
+        <div class="logo-box">
+            <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="100" height="auto" viewBox="0 0 89 33.68" style="margin: 0 auto; display: block;">
+                <polygon fill="#eb0017" points="14.32 0 0 32.99 6.83 32.99 9.19 27.32 21.34 27.32 18.79 21.5 11.61 21.5 16.98 8.62 27.13 32.99 33.95 32.99 19.64 0 14.32 0"/>
+                <polygon fill="#eb0017" points="82.74 4.71 82.74 21.5 69.2 4.71 63.75 4.71 63.75 32.99 70.01 32.99 70.01 15.55 84.08 32.99 89 32.99 89 4.71 82.74 4.71"/>
+                <path fill="#eb0017" d="M46.46,4A14.83,14.83,0,1,0,61.28,18.85,14.84,14.84,0,0,0,46.46,4Zm0,23.38A8.56,8.56,0,1,1,55,18.85,8.57,8.57,0,0,1,46.46,27.41Z"/>
+            </svg>
+        </div>
+        <p class="brand-title">PT. AON INSURANCE INDONESIA</p>
+
+        <h1 class="portal-title">Policy Verification</h1>
+        <p class="portal-desc">
+            Please enter your official Policy Number below to verify the authenticity and active status of your insurance guarantee certificate.
+        </p>
+
+        <form id="verificationForm" novalidate>
+            <div class="search-group">
+                <input type="text" id="policyNumberInput" class="search-input" placeholder="e.g., PI-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false" aria-label="Policy Number">
+                <div id="formMessage" class="form-message" aria-live="polite"></div>
+            </div>
+
+            <button type="submit" class="verify-btn">Verify Document</button>
+        </form>
+    </div>
+</div>
+
+<div class="footer-note">
+    © 2026 PT. AON Insurance Indonesia. All Rights Reserved. <br>
+    For assistance or verification inquiries, please contact our support team via email at
+    <a href="mailto:info.enquiry@aon-indonesia-insurance.com">info.enquiry@aon-indonesia-insurance.com</a>.
+</div>
+
+<script src="./data/policies.js"></script>
+<script>
+    function normalizePolicyNumber(value) {
+        const lookalikes = {
+            'А':'A', 'В':'B', 'Е':'E', 'К':'K', 'М':'M', 'Н':'H',
+            'О':'O', 'Р':'P', 'С':'C', 'Т':'T', 'У':'Y', 'Х':'X'
+        };
+
+        return String(value || '')
+            .trim()
+            .toUpperCase()
+            .replace(/[АВЕКМНОРСТУХ]/g, char => lookalikes[char] || char)
+            .replace(/[^A-Z0-9]/g, '');
+    }
+
+    function executeVerification(event) {
+        if (event) event.preventDefault();
+
+        const input = document.getElementById('policyNumberInput');
+        const message = document.getElementById('formMessage');
+        const normalizedInput = normalizePolicyNumber(input.value);
+
+        message.textContent = '';
+
+        if (!normalizedInput) {
+            message.textContent = 'Please enter your Policy Number first.';
+            input.focus();
+            return;
+        }
+
+        const policies = Array.isArray(window.POLICIES) ? window.POLICIES : [];
+        const matchedPolicy = policies.find(policy =>
+            normalizePolicyNumber(policy.policyNumber) === normalizedInput
+        );
+
+        if (!matchedPolicy) {
+            message.textContent = 'Policy number not found. Please check the number and try again.';
+            input.focus();
+            input.select();
+            return;
+        }
+
+        const verifyPath = window.location.protocol === 'file:' ? './verify/index.html' : './verify/';
+        window.location.href = verifyPath + '?policy=' + encodeURIComponent(matchedPolicy.policyNumber);
+    }
+
+    document.getElementById('verificationForm').addEventListener('submit', executeVerification);
+</script>
+
+</body>
+</html>
