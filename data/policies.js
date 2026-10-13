@@ -58,7 +58,7 @@ window.POLICIES = [
     "period": {
       "issueDate": "2026-10-08",
       "startDate": "2026-10-08",
-      "endDate": "2027-10-07",
+      "endDate": "2027-07-07",
       "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only)\nSingapore, Thailand and Myanmar"
     },
     "vessel": {
