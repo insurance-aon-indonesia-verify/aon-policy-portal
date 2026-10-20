@@ -146,7 +146,7 @@ window.POLICIES = [
       "omnibus": "The Insurer may, in its absolute discretion, indemnify the Assured in respect of any liabilities, losses, costs, or expenses incidental to the business of owning, operating, or managing vessels.",
       "wreckRemoval": "This policy covers costs and expenses relating to the raising, removal, destruction, lighting, or marking of the wreck of the insured vessel, when compulsory by law."
     },
-    "policyNumber": "PI17920260732901196",
+    "policyNumber": "PI17920260732901196PATC",
     "insuranceType": "PROTECTION & INDEMNITY (P&I)"
   },
   {
