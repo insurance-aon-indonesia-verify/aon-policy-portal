@@ -98,5 +98,105 @@ window.POLICIES = [
     },
     "policyNumber": "PI17920260732901368PATC",
     "insuranceType": "PROTECTION & INDEMNITY (P&I)"
+  },
+  {
+    "owner": {
+      "name": "BIBORO ATAURO EXPRESS UNIPESSOAL, LDA.",
+      "registrationNumber": "202501051492 / 1653422-V",
+      "address": "Timor Plaza CBD 2, Andar 2 #202-203 Rua 20 De Setemboro Bebenux Dom Alexio, Dili - Timor Leste"
+    },
+    "period": {
+      "issueDate": "2026-10-20",
+      "startDate": "2026-10-20",
+      "endDate": "2026-11-19",
+      "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only), Singapore, Thailand and Myanmar"
+    },
+    "vessel": {
+      "name": "BIBORO 1",
+      "imoNumber": "8820573",
+      "callSign": "JVBN6",
+      "type": "Oil Tanker",
+      "portOfRegistry": "Ulaanbataar, Mongolia",
+      "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
+      "classification": "OBS Society Class",
+      "grossNetTonnage": "733 Tons / 344 Tons",
+      "deadweight": "1250 Tons",
+      "dimensions": "60.01 m / 10.00 m / 4.50 m",
+      "engineManufacturer": "Hanshin Diesel Ltd",
+      "enginePower": "6LU-28/735 kW/1 (one)",
+      "totalPower": "735 kW"
+    },
+    "financial": {
+      "insuredValue": "USD 137,200.00",
+      "insuredValueWords": "One Hundred Thirty Seven Thousand Two Hundred United States Dollars only",
+      "premiumCalculation": "USD 137,200.00 x 0.35% = USD 480.00",
+      "netPremium": "USD 495.00",
+      "netPremiumWords": "Four Hundred Ninety United States Dollars only",
+      "deductible": "Subject to a deductible of USD 1,000.00 or 0.50% of the Insured Value, whichever is greater.",
+      "rebateDeductions": ""
+    },
+    "coverage": {
+      "description": "This policy covers Protection and Indemnity (P&I) risks up to Hull value as per Clause 9 of Institute Time Clauses Hull - Port Risk (20/7/87), including absolute liability for Marine Seepage and Pollution.",
+      "hullRiskLimit": "USD 25,900.00",
+      "crewLiabilityLimit": "USD 1,000.00 per person (Covers damages, medical, hospital, or funeral expenses)."
+    },
+    "clauses": {
+      "premiumPayment": "All premiums due must be paid within thirty (30) days from the inception date. In the event that the premium is not paid by the due date, this policy and all coverages hereunder shall automatically terminate without notice.",
+      "classificationWarranty": "Warranted that the insured vessel is classed with OBS Society Class. Vessel must comply fully with all statutory survey regulations, laws, and requirements of the Flag State (Republic of Mali).",
+      "omnibus": "The Insurer may, in its absolute discretion, indemnify the Assured in respect of any liabilities, losses, costs, or expenses incidental to the business of owning, operating, or managing vessels.",
+      "wreckRemoval": "This policy covers costs and expenses relating to the raising, removal, destruction, lighting, or marking of the wreck of the insured vessel, when compulsory by law."
+    },
+    "policyNumber": "PI17920260732901196",
+    "insuranceType": "PROTECTION & INDEMNITY (P&I)"
+  },
+  {
+    "owner": {
+      "name": "BIBORO ATAURO EXPRESS UNIPESSOAL, LDA.",
+      "registrationNumber": "202601053456 / 1653422-V",
+      "address": "Timor Plaza CBD 2, Andar 2 #202-203 Rua 20 De Setemboro Bebenux Dom Alexio, Dili - Timor Leste"
+    },
+    "period": {
+      "issueDate": "2026-10-20",
+      "startDate": "2026-10-20",
+      "endDate": "2026-11-19",
+      "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only), Singapore, Thailand and Myanmar"
+    },
+    "vessel": {
+      "name": "BIBORO 2",
+      "imoNumber": "9066916",
+      "callSign": "JVBP6",
+      "type": "Oil Tanker",
+      "portOfRegistry": "Ulaanbataar, Mongolia",
+      "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
+      "classification": "OBS Society Class",
+      "grossNetTonnage": "1531 Tons / 822 Tons",
+      "deadweight": "2666 Tons",
+      "dimensions": "74.39 m / 12.00 m / 7.00 m",
+      "engineManufacturer": "Hanshin Diesel Ltd",
+      "enginePower": "6LU-40/2058 kW/1 (one)",
+      "totalPower": "2058 kW"
+    },
+    "financial": {
+      "insuredValue": "USD 205,800.00",
+      "insuredValueWords": "Two Hundred Five Thousand Eight Hundred United States Dollars only",
+      "premiumCalculation": "USD 205,800.00 x 0.35% = USD 720.00",
+      "netPremium": "USD 735.00",
+      "netPremiumWords": "Seven Hundred Thirty United States Dollars only",
+      "deductible": "Subject to a deductible of USD 1,000.00 or 0.50% of the Insured Value, whichever is greater.",
+      "rebateDeductions": ""
+    },
+    "coverage": {
+      "description": "This policy covers Protection and Indemnity (P&I) risks up to Hull value as per Clause 9 of Institute Time Clauses Hull - Port Risk (20/7/87), including absolute liability for Marine Seepage and Pollution.",
+      "hullRiskLimit": "USD 25,900.00",
+      "crewLiabilityLimit": "USD 1,000.00 per person (Covers damages, medical, hospital, or funeral expenses)."
+    },
+    "clauses": {
+      "premiumPayment": "All premiums due must be paid within thirty (30) days from the inception date. In the event that the premium is not paid by the due date, this policy and all coverages hereunder shall automatically terminate without notice.",
+      "classificationWarranty": "Warranted that the insured vessel is classed with OBS Society Class. Vessel must comply fully with all statutory survey regulations, laws, and requirements of the Flag State (Republic of Mali).",
+      "omnibus": "The Insurer may, in its absolute discretion, indemnify the Assured in respect of any liabilities, losses, costs, or expenses incidental to the business of owning, operating, or managing vessels.",
+      "wreckRemoval": "This policy covers costs and expenses relating to the raising, removal, destruction, lighting, or marking of the wreck of the insured vessel, when compulsory by law."
+    },
+    "policyNumber": "PI17920260732901097PATC",
+    "insuranceType": "PROTECTION & INDEMNITY (P&I)"
   }
 ];
