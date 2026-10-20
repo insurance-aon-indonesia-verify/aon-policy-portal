@@ -177,16 +177,19 @@
             color: #333;
         }
 
-        .vessel-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0 40px;
-        }
-
         .vessel-table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
         }
+
+        .vessel-table .left-label,
+        .vessel-table .right-label { width: 19%; }
+        .vessel-table .left-separator,
+        .vessel-table .right-separator { width: 2%; }
+        .vessel-table .left-value { width: 25%; }
+        .vessel-table .spacer { width: 4%; }
+        .vessel-table .right-value { width: 29%; }
 
         .vessel-table td {
             padding: 12px 0;
@@ -198,13 +201,16 @@
         .vessel-table td.label {
             font-weight: 600;
             color: #57606f;
-            width: 160px;
         }
 
         .vessel-table td.separator {
-            width: 15px;
             color: #333;
         }
+
+        .vessel-table td.spacer,
+        .vessel-table td.empty { border-bottom: 0; }
+
+        .vessel-table td.value { overflow-wrap: anywhere; }
 
         .clause-item {
             background: #fff;
@@ -352,26 +358,13 @@
 
         <h2 class="section-title">2. Particulars of Vessel</h2>
         <div class="card" style="margin-bottom: 20px; padding: 10px 25px;">
-            <div class="vessel-grid">
-                <table class="vessel-table">
-                     <tr><td class="label">Name of Vessel</td><td class="separator">:</td><td><strong id="vesselName"></strong></td></tr>
-                     <tr id="imoNumberRow" class="hidden"><td class="label">IMO Number</td><td class="separator">:</td><td id="imoNumber"></td></tr>
-                     <tr id="callSignRow" class="hidden"><td class="label">Call Sign</td><td class="separator">:</td><td id="callSign"></td></tr>
-                     <tr><td class="label">Port of Registry</td><td class="separator">:</td><td id="portOfRegistry"></td></tr>
-                    <tr id="builderBuiltRow" class="hidden"><td class="label">Builder / Built</td><td class="separator">:</td><td id="builderBuilt"></td></tr>
-                    <tr><td class="label">Gross / Net Tonnage</td><td class="separator">:</td><td id="grossNetTonnage"></td></tr>
-                    <tr><td class="label">Dimensions (L / B / D)</td><td class="separator">:</td><td id="dimensions"></td></tr>
-                    <tr><td class="label">Engine Power</td><td class="separator">:</td><td id="enginePower"></td></tr>
-                </table>
-
-                <table class="vessel-table">
-                    <tr><td class="label">Vessel Type</td><td class="separator">:</td><td id="vesselType"></td></tr>
-                    <tr><td class="label">Classification</td><td class="separator">:</td><td id="classification"></td></tr>
-                    <tr><td class="label">Deadweight (DWT)</td><td class="separator">:</td><td id="deadweight"></td></tr>
-                    <tr><td class="label">Engine Manufacturer</td><td class="separator">:</td><td id="engineManufacturer"></td></tr>
-                    <tr><td class="label">Total Power</td><td class="separator">:</td><td id="totalPower"></td></tr>
-                </table>
-            </div>
+            <table class="vessel-table">
+                <colgroup>
+                    <col class="left-label"><col class="left-separator"><col class="left-value"><col class="spacer">
+                    <col class="right-label"><col class="right-separator"><col class="right-value">
+                </colgroup>
+                <tbody id="vesselRows"></tbody>
+            </table>
         </div>
 
         <h2 class="section-title">3. Financial Summary & Premium</h2>
@@ -540,6 +533,65 @@
         }
     }
 
+    function renderVesselRows(vessel) {
+        let lengthBreadth = String(vessel.lengthBreadth || '').trim();
+        let depth = String(vessel.depth || '').trim();
+        if (!lengthBreadth && !depth) {
+            const legacy = String(vessel.dimensions || '').trim();
+            const parts = legacy.split(/\s*\/\s*/);
+            if (parts.length === 3 && parts.every(Boolean)) {
+                lengthBreadth = parts[0] + ' / ' + parts[1];
+                depth = parts[2];
+            } else {
+                lengthBreadth = legacy;
+            }
+        }
+        const details = [
+            ['Name of Vessel', vessel.name, true],
+            ['Vessel Type', vessel.type],
+            ['Port of Registry', vessel.portOfRegistry],
+            ['IMO Number', vessel.imoNumber, false, true],
+            ['Call Sign', vessel.callSign, false, true],
+            ['Builder / Built', vessel.builderBuilt, false, true],
+            ['Classification', vessel.classification],
+            ['Gross / Net Tonnage', vessel.grossNetTonnage],
+            ['Deadweight (DWT)', vessel.deadweight],
+            ['Length / Breadth', lengthBreadth],
+            ['Depth', depth],
+            ['Manufacturer', vessel.engineManufacturer],
+            ['Type / Power / Number', vessel.enginePower],
+            ['Total Power', vessel.totalPower]
+        ].filter(([, value, , optional]) => !optional || String(value || '').trim());
+        const last = details.length % 2 ? details.pop() : null;
+        const pairs = [];
+        for (let index = 0; index < details.length; index += 2) pairs.push([details[index], details[index + 1]]);
+        if (last) pairs.push([null, last]);
+        const rows = pairs.map(([left, right]) => {
+            const row = document.createElement('tr');
+            const addCell = (className, content) => {
+                const cell = document.createElement('td');
+                cell.className = className;
+                cell.textContent = content;
+                row.append(cell);
+                return cell;
+            };
+            addCell(left ? 'label' : 'empty', left ? left[0] : '');
+            addCell(left ? 'separator' : 'empty', left ? ':' : '');
+            const valueCell = addCell(left ? 'value' : 'empty', left && !left[2] ? left[1] || '-' : '');
+            if (left && left[2]) {
+                const bold = document.createElement('strong');
+                bold.textContent = left[1] || '-';
+                valueCell.append(bold);
+            }
+            addCell('spacer', '');
+            addCell(right ? 'label' : 'empty', right ? right[0] : '');
+            addCell(right ? 'separator' : 'empty', right ? ':' : '');
+            addCell(right ? 'value' : 'empty', right ? right[1] || '-' : '');
+            return row;
+        });
+        document.getElementById('vesselRows').replaceChildren(...rows);
+    }
+
     function updateStatus() {
         if (!loadedPolicy) return;
 
@@ -563,23 +615,13 @@
         setText('ownerRegistration', policy.owner.registrationNumber);
         setText('ownerAddress', policy.owner.address);
 
-        setText('insurancePeriod', formatDate(policy.period.startDate) + ' until ' + formatDate(policy.period.endDate));
+        const voyageNote = policy.period.showVoyageNote === true && typeof policy.period.voyageNote === 'string'
+            ? policy.period.voyageNote.trim() : '';
+        setText('insurancePeriod', formatDate(policy.period.startDate) + ' until ' + formatDate(policy.period.endDate) + (voyageNote ? ' / ' + voyageNote : ''));
         setText('tradingLimits', policy.period.tradingLimits);
         setText('issueDate', formatDate(policy.period.issueDate));
 
-        setText('vesselName', policy.vessel.name);
-        setOptionalRow('imoNumberRow', 'imoNumber', policy.vessel.imoNumber);
-        setOptionalRow('callSignRow', 'callSign', policy.vessel.callSign);
-        setText('portOfRegistry', policy.vessel.portOfRegistry);
-        setOptionalRow('builderBuiltRow', 'builderBuilt', policy.vessel.builderBuilt);
-        setText('grossNetTonnage', policy.vessel.grossNetTonnage);
-        setText('dimensions', policy.vessel.dimensions);
-        setText('enginePower', policy.vessel.enginePower);
-        setText('vesselType', policy.vessel.type);
-        setText('classification', policy.vessel.classification);
-        setText('deadweight', policy.vessel.deadweight);
-        setText('engineManufacturer', policy.vessel.engineManufacturer);
-        setText('totalPower', policy.vessel.totalPower);
+        renderVesselRows(policy.vessel);
 
         setText('insuredValue', policy.financial.insuredValue);
         setText('insuredValueWords', '(' + policy.financial.insuredValueWords + ')');

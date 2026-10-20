@@ -9,22 +9,26 @@ window.POLICIES = [
       "issueDate": "2026-08-01",
       "startDate": "2026-08-01",
       "endDate": "2026-10-31",
+      "showVoyageNote": false,
+      "voyageNote": "Single Voyage Cover",
       "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only), Singapore, Thailand and Myanmar"
     },
     "vessel": {
       "name": "GREAT TRADER",
-      "imoNumber": "",
-      "callSign": "",
       "type": "General Cargo",
       "portOfRegistry": "Bamako, Republic of Mali",
+      "imoNumber": "",
+      "callSign": "",
       "builderBuilt": "Yong Choo Kui Sibu, Sarawak / 1982",
       "classification": "OBS Society Class",
       "grossNetTonnage": "298 Tons / 171 Tons",
       "deadweight": "380 Tons",
-      "dimensions": "33.90 m / 8.50 m / 3.40 m",
+      "lengthBreadth": "33.90 m / 8.50 m",
+      "depth": "3.40 m",
       "engineManufacturer": "Nissan Diesel Motor Ltd",
       "enginePower": "104 kW x 2 (Two Units)",
-      "totalPower": "208 kW"
+      "totalPower": "208 kW",
+      "dimensions": "33.90 m / 8.50 m / 3.40 m"
     },
     "financial": {
       "insuredValue": "USD 37,100.00",
@@ -59,22 +63,26 @@ window.POLICIES = [
       "issueDate": "2026-10-08",
       "startDate": "2026-10-08",
       "endDate": "2027-07-07",
+      "showVoyageNote": false,
+      "voyageNote": "Single Voyage Cover",
       "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only)\nSingapore, Thailand and Myanmar"
     },
     "vessel": {
       "name": "GREAT TRADER 2",
-      "imoNumber": "9108570",
-      "callSign": "H7WZ2",
       "type": "Oil Product Tanker",
       "portOfRegistry": "Corinto, Republic of Nicaragua",
+      "imoNumber": "9108570",
+      "callSign": "H7WZ2",
       "builderBuilt": "Hakata Zosen Shipbuilding, Co, Ltd. Imabari-shi, Ehime-ken, Japan/1994",
       "classification": "OBS Society Class",
       "grossNetTonnage": "1,148 Tons / 487 Tons",
       "deadweight": "1,907.78 Tons",
-      "dimensions": "74.20 m / 11.80 m / 5.25 m",
+      "lengthBreadth": "74.20 m / 11.80 m",
+      "depth": "5.25 m",
       "engineManufacturer": "Hanshin Diesel Works Ltd; Engine: Hanshin Type 6LU32G",
       "enginePower": "735.50 kW x 1",
-      "totalPower": "735.50 kW"
+      "totalPower": "735.50 kW",
+      "dimensions": "74.20 m / 11.80 m / 5.25 m"
     },
     "financial": {
       "insuredValue": "USD 482,000.00",
@@ -106,25 +114,29 @@ window.POLICIES = [
       "address": "Timor Plaza CBD 2, Andar 2 #202-203 Rua 20 De Setemboro Bebenux Dom Alexio, Dili - Timor Leste"
     },
     "period": {
-      "issueDate": "2026-10-20",
-      "startDate": "2026-10-20",
-      "endDate": "2026-11-19",
+      "issueDate": "2026-10-21",
+      "startDate": "2026-10-21",
+      "endDate": "2026-11-20",
+      "showVoyageNote": true,
+      "voyageNote": "Single Voyage Cover",
       "tradingLimits": "Malaysia to Indonesia only"
     },
     "vessel": {
       "name": "BIBORO 1",
-      "imoNumber": "8820573",
-      "callSign": "JVBN6",
       "type": "Oil Tanker",
       "portOfRegistry": "Ulaanbataar, Mongolia",
+      "imoNumber": "8820573",
+      "callSign": "JVBN6",
       "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
-      "classification": "Singapore Burau of Shipping",
+      "classification": "Singclass Singapore",
       "grossNetTonnage": "733 Tons / 344 Tons",
       "deadweight": "1250 Tons",
-      "dimensions": "60.01 m / 10.00 m / 4.50 m",
+      "lengthBreadth": "60.01 m / 10.00 m",
+      "depth": "4.50 m",
       "engineManufacturer": "Hanshin Diesel Ltd",
       "enginePower": "6LU-28/735 kW/1 (one)",
-      "totalPower": "735 kW"
+      "totalPower": "735 kW",
+      "dimensions": "60.01 m / 10.00 m / 4.50 m"
     },
     "financial": {
       "insuredValue": "USD 137,200.00",
@@ -156,25 +168,29 @@ window.POLICIES = [
       "address": "Timor Plaza CBD 2, Andar 2 #202-203 Rua 20 De Setemboro Bebenux Dom Alexio, Dili - Timor Leste"
     },
     "period": {
-      "issueDate": "2026-10-20",
-      "startDate": "2026-10-20",
-      "endDate": "2026-11-19",
+      "issueDate": "2026-10-21",
+      "startDate": "2026-10-21",
+      "endDate": "2026-11-20",
+      "showVoyageNote": true,
+      "voyageNote": "Single Voyage Cover",
       "tradingLimits": "Malaysia to Indonesia only"
     },
     "vessel": {
       "name": "BIBORO 2",
-      "imoNumber": "9066916",
-      "callSign": "JVBP6",
       "type": "Oil Tanker",
       "portOfRegistry": "Ulaanbataar, Mongolia",
+      "imoNumber": "9066916",
+      "callSign": "JVBP6",
       "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
-      "classification": "Singapore Burau of Shipping",
+      "classification": "Singclass Singapore",
       "grossNetTonnage": "1531 Tons / 822 Tons",
       "deadweight": "2666 Tons",
-      "dimensions": "74.39 m / 12.00 m / 7.00 m",
+      "lengthBreadth": "74.39 m / 12.00 m",
+      "depth": "7.00 m",
       "engineManufacturer": "Hanshin Diesel Ltd",
       "enginePower": "6LU-40/2058 kW/1 (one)",
-      "totalPower": "2058 kW"
+      "totalPower": "2058 kW",
+      "dimensions": "74.39 m / 12.00 m / 7.00 m"
     },
     "financial": {
       "insuredValue": "USD 205,800.00",
