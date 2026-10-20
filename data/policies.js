@@ -109,7 +109,7 @@ window.POLICIES = [
       "issueDate": "2026-10-20",
       "startDate": "2026-10-20",
       "endDate": "2026-11-19",
-      "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only), Singapore, Thailand and Myanmar"
+      "tradingLimits": "Malaysia to Indonesia only"
     },
     "vessel": {
       "name": "BIBORO 1",
@@ -118,7 +118,7 @@ window.POLICIES = [
       "type": "Oil Tanker",
       "portOfRegistry": "Ulaanbataar, Mongolia",
       "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
-      "classification": "OBS Society Class",
+      "classification": "Singapore Burau of Shipping",
       "grossNetTonnage": "733 Tons / 344 Tons",
       "deadweight": "1250 Tons",
       "dimensions": "60.01 m / 10.00 m / 4.50 m",
@@ -159,7 +159,7 @@ window.POLICIES = [
       "issueDate": "2026-10-20",
       "startDate": "2026-10-20",
       "endDate": "2026-11-19",
-      "tradingLimits": "Indonesia (except Papua), Malaysia (West Malaysia only), Singapore, Thailand and Myanmar"
+      "tradingLimits": "Malaysia to Indonesia only"
     },
     "vessel": {
       "name": "BIBORO 2",
@@ -168,7 +168,7 @@ window.POLICIES = [
       "type": "Oil Tanker",
       "portOfRegistry": "Ulaanbataar, Mongolia",
       "builderBuilt": "Kanasashi Shipbuilding Co., Ltd.  Shimizu, Shizuoka-Japan/ 1993",
-      "classification": "OBS Society Class",
+      "classification": "Singapore Burau of Shipping",
       "grossNetTonnage": "1531 Tons / 822 Tons",
       "deadweight": "2666 Tons",
       "dimensions": "74.39 m / 12.00 m / 7.00 m",
